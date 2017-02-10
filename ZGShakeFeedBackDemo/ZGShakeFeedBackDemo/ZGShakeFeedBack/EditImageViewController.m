@@ -110,6 +110,12 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"谢谢使用" message:@"已经存到了图库" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 - (void)closeVC {
     [self dismissViewControllerAnimated:NO completion:nil];
